@@ -30,13 +30,13 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_login);
-        username=(EditText)findViewById(R.id.eT_username);
-        password=(EditText)findViewById(R.id.eT_password);
+        username=findViewById(R.id.eT_username);
+        password=findViewById(R.id.eT_password);
 
-        final ImageView iV_houseLogin =(ImageView)findViewById(R.id.iV_houseLogin);
+        final ImageView iV_houseLogin =findViewById(R.id.iV_houseLogin);
         iV_houseLogin.setImageResource(R.drawable.house);
 
-        final Button bt_login = (Button)findViewById(R.id.bt_login);
+        final Button bt_login =findViewById(R.id.bt_login);
         bt_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,8 +48,7 @@ public class LoginActivity extends Activity {
                     password.requestFocus();
                 }else {
                     BaseUrl url=new BaseUrl();
-                    myapiendpoint service = url.initialize().create(myapiendpoint.class);
-                    Call<ResponseBody> call =service.login(username.getText().toString(),password.getText().toString());
+                    Call<ResponseBody> call =url.initialize().login(username.getText().toString(),password.getText().toString());
                     call.enqueue(new Callback<ResponseBody>() {
                         @Override
                         public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
