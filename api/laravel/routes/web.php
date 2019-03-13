@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('/lipa-na-mpesa/phone={phone}','MpesaController@lipa_na_mpesa');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
