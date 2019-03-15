@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
 Route::post('/login', function (Request $request){
     \Illuminate\Support\Facades\Validator::make($request->all(),[
         'name' => 'required',
@@ -38,3 +39,5 @@ Route::post('/login', function (Request $request){
 Route::get('users',function (){
    return response()->json([\App\User::all()->toJson()],200) ;
 });
+//mpesa routes
+Route::get('/lipa-na-mpesa/phone={phone}','MpesaController@lipa_na_mpesa');//stk push
