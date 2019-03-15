@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Heri Homes</string>
+    <string name="title_activity_property">Property</string>
 </resources>
