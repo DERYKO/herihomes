@@ -51,11 +51,11 @@ class MpesaController extends Controller
 
     }
 
-    public function lipa_na_mpesa($phone){
+    public function lipa_na_mpesa($phone,$amount){
         $BusinessShortCode=174379;
         $Passkey='bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919';
         $TransactionType='CustomerPayBillOnline';
-        $Amount=10;
+        $Amount=$amount;
         $PartyA=$phone;
         $PartyB=174379;
         $PhoneNumber=$phone;
