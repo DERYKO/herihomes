@@ -1,25 +1,27 @@
 package com.example.herihomes;
 
 import android.app.Activity;
-import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
 
-public class MainActivity extends Activity {
+public class PayRentActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_payrent);
 
-        final ImageView iV_dashboard =(ImageView)findViewById(R.id.iV_dashboard);
-        iV_dashboard.setImageResource(R.drawable.dashboard);
+        final ImageView iv_hao =(ImageView)findViewById(R.id.iv_hao);
+        iv_hao.setImageResource(R.drawable.building);
 
-        final ImageView iV_peter =(ImageView)findViewById(R.id.iV_peter);
-        iV_peter.setImageResource(R.drawable.peter);
+        final ImageView iv_mpesa =(ImageView)findViewById(R.id.iv_mpesa);
+        iv_mpesa.setImageResource(R.drawable.mpesa);
+
+        final ImageView iv_paypal =(ImageView)findViewById(R.id.iv_paypal);
+        iv_paypal.setImageResource(R.drawable.paypal);
 
         final ImageView iv_chart =(ImageView)findViewById(R.id.iv_chart);
         iv_chart.setImageResource(R.drawable.chart);
@@ -32,14 +34,5 @@ public class MainActivity extends Activity {
 
         final ImageView iv_logout =(ImageView)findViewById(R.id.iv_logout);
         iv_logout.setImageResource(R.drawable.logout);
-
-        final ImageView iv_pay = (ImageView)findViewById(R.id.iv_pay);
-        iv_pay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, PayRentActivity.class);
-                MainActivity.this.startActivity(intent);
-            }
-        });
     }
 }
