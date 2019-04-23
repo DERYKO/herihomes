@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,25 @@ use Illuminate\Http\Request;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+Route::post('/login', function (Request $request){
+    \Illuminate\Support\Facades\Validator::make($request->all(),[
+        'name' => 'required',
+        'password' => 'required'
+    ]);
+    $user = \App\User::where('name', $request->get('name'))->first();
+    if ($user) {
+        if (\Illuminate\Support\Facades\Hash::check($request->get('password'), $user->password) == false) {
+            return response()->json(['message' => 'invalid password'], 200);
+        } else {
+            \Illuminate\Support\Facades\Auth::login($user);
+            return response()->json(['message' => 'success'], 200);
+        }
+
+    } else {
+        return response()->json(["message" => "User does not exists"],200);
+    }
+});
+Route::get('users',function (){
+   return response()->json([\App\User::all()->toJson()],200) ;
 });
