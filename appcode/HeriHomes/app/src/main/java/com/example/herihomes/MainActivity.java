@@ -41,5 +41,13 @@ public class MainActivity extends Activity {
                 MainActivity.this.startActivity(intent);
             }
         });
+        final ImageView iv_pay_schedule = (ImageView)findViewById(R.id.iv_pay_schedule);
+        iv_pay_schedule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PaymentScheduleActivity.class);
+                MainActivity.this.startActivity(intent);
+            }
+        });
     }
 }

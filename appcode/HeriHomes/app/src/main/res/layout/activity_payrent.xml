@@ -42,7 +42,7 @@
 
             <EditText
                 android:id="@+id/ed_apartment"
-                android:layout_width="260dp"
+                android:layout_width="230dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:ems="10"
@@ -54,7 +54,7 @@
 
             <EditText
                 android:id="@+id/eT_room"
-                android:layout_width="260dp"
+                android:layout_width="230dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Room Code"
@@ -66,26 +66,26 @@
 
             <EditText
                 android:id="@+id/eT_tenant"
-                android:layout_width="260dp"
+                android:layout_width="230dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Tenant's Name"
                 android:inputType="textPersonName"
                 android:paddingLeft="10dp"
                 android:paddingTop="20dp"
-                android:paddingBottom="15dp"
+                android:paddingBottom="20dp"
                 android:textSize="12dp" />
 
             <EditText
                 android:id="@+id/eT_phone"
-                android:layout_width="260dp"
+                android:layout_width="230dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Phone Number"
                 android:inputType="phone"
                 android:paddingLeft="10dp"
                 android:paddingTop="20dp"
-                android:paddingBottom="15dp"
+                android:paddingBottom="20dp"
                 android:textSize="12dp" />
 
             <TextView
@@ -124,6 +124,7 @@
 
     </android.support.v7.widget.CardView>
 
+
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="0dp"
@@ -135,6 +136,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9"
+
         app:layout_constraintVertical_bias="1.0">
 
         <LinearLayout
@@ -147,6 +149,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
                 android:orientation="vertical">
 
                 <ImageView
@@ -169,6 +173,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
                 android:orientation="vertical"
                 android:textAlignment="center">
 
@@ -194,6 +199,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
                 android:orientation="vertical"
                 android:textAlignment="center">
 
@@ -218,6 +224,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
                 android:orientation="vertical"
                 android:textAlignment="center">
 
@@ -238,5 +245,11 @@
             </LinearLayout>
 
         </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@+id/bottomNavigationView"
+            android:background="#666" />
     </android.support.design.widget.BottomNavigationView>
 </android.support.constraint.ConstraintLayout>

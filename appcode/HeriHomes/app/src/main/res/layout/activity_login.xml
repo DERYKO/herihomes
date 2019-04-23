@@ -18,7 +18,7 @@
 
     <android.support.v7.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="270dp"
+        android:layout_width="wrap_content"
         android:layout_height="350dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
@@ -27,81 +27,88 @@
         android:layout_marginRight="24dp"
         android:layout_marginBottom="8dp"
         app:cardBackgroundColor="#FFF"
+        app:cardCornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/iV_houseLogin"
         app:layout_constraintVertical_bias="0.72">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:orientation="vertical"
-            android:paddingLeft="30dp">
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="20dp"
+            android:textStyle="bold"
+            android:textSize="24dp"
+            android:text="HERI HOME" />
 
-            <TextView
-                android:id="@+id/tv_username"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="username"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                android:textSize="16sp" />
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:paddingTop="40dp"
+            android:orientation="vertical">
+
+            <!--<TextView-->
+                <!--android:id="@+id/tv_username"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="username"-->
+                <!--android:textAppearance="@style/TextAppearance.AppCompat.Small"-->
+                <!--android:textSize="16sp" />-->
 
             <EditText
                 android:id="@+id/eT_username"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textEmailAddress"
-                android:paddingLeft="10dp"
-                android:textSize="16sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="130dp"
-            android:orientation="vertical"
-            android:paddingLeft="30dp">
-
-            <TextView
-                android:id="@+id/tv_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="password"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                android:textSize="16sp" />
+                android:ems="10"
+                android:hint="username"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:inputType="textEmailAddress"
+                android:textSize="13sp" />
+            <!--<TextView-->
+                <!--android:id="@+id/tv_password"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="password"-->
+                <!--android:paddingTop="20dp"-->
+                <!--android:textAppearance="@style/TextAppearance.AppCompat.Small"-->
+                <!--android:textSize="16sp" />-->
 
             <EditText
                 android:id="@+id/eT_password"
-                android:layout_width="200dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:hint="password"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
                 android:inputType="textPassword"
-                android:paddingLeft="10dp"
-                android:textSize="16sp" />
-        </LinearLayout>
+                android:textSize="13sp" />
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal|end"
+                android:text="Forgot password?"
+                android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="200dp"
-            android:gravity="center_horizontal|end"
-            android:paddingRight="50dp"
-            android:text="Forgot password?"
-            android:textSize="12sp" />
+        </LinearLayout>
 
         <Button
             android:id="@+id/bt_login"
             android:layout_width="200dp"
             android:layout_height="40dp"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="270dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="120dp"
             android:background="@drawable/rounded_btn"
             android:text="Login"
             android:textColor="#fff" />
+
 
     </android.support.v7.widget.CardView>
 
