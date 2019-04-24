@@ -16,7 +16,7 @@ ImageView property;
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
-        property=findViewById(R.id.property);
+        property=findViewById(R.id.imageView6);
         property.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

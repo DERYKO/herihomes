@@ -20,14 +20,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PropertyRecylerViewAdapter extends RecyclerView.Adapter<PropertyRecylerViewAdapter.ViewHolder> implements Filterable {
-   List<JSONObject> properties;
-   Context context;
+    List<JSONObject> properties;
+    Context context;
     List<JSONObject> arrayListf;
 
     public PropertyRecylerViewAdapter(List<JSONObject> properties, Context context) {
         this.properties = properties;
         this.context = context;
-        this.arrayListf=properties;
+        this.arrayListf = properties;
     }
 
     @NonNull
@@ -42,7 +42,7 @@ public class PropertyRecylerViewAdapter extends RecyclerView.Adapter<PropertyRec
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-      JSONObject object=arrayListf.get(i);
+        JSONObject object = arrayListf.get(i);
         try {
             viewHolder.name.setText(object.getString("name"));
             viewHolder.address.setText(object.getString("address"));
@@ -68,8 +68,8 @@ public class PropertyRecylerViewAdapter extends RecyclerView.Adapter<PropertyRec
                     arrayListf = properties;
                 } else {
                     List<JSONObject> filteredList = new ArrayList<>();
-                    for (int i=0;i<properties.size();i++) {
-                        JSONObject object=properties.get(i);
+                    for (int i = 0; i < properties.size(); i++) {
+                        JSONObject object = properties.get(i);
                         try {
                             if (object.getString("name").toLowerCase().contains(charString.toLowerCase()) | object.getString("address").toLowerCase().contains(charString.toLowerCase())) {
                                 filteredList.add(object);
@@ -79,7 +79,7 @@ public class PropertyRecylerViewAdapter extends RecyclerView.Adapter<PropertyRec
                         }
                     }
 
-                    arrayListf= filteredList;
+                    arrayListf = filteredList;
                 }
 
 
@@ -98,12 +98,13 @@ public class PropertyRecylerViewAdapter extends RecyclerView.Adapter<PropertyRec
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
-        TextView name,address;
+        TextView name, address;
+
         public ViewHolder(View itemView) {
             super(itemView);
-            imageView=itemView.findViewById(R.id.image);
-            name=itemView.findViewById(R.id.name);
-            address=itemView.findViewById(R.id.address);
+            imageView = itemView.findViewById(R.id.image);
+            name = itemView.findViewById(R.id.name);
+            address = itemView.findViewById(R.id.address);
 
         }
     }
