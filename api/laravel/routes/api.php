@@ -17,7 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::post('/login',function (Request $request){
+
+Route::post('/login', function (Request $request){
+    \Illuminate\Support\Facades\Validator::make($request->all(),[
+        'name' => 'required',
+        'password' => 'required'
+    ]);
     $user = \App\User::where('name', $request->get('name'))->first();
     if ($user) {
         if (\Illuminate\Support\Facades\Hash::check($request->get('password'), $user->password) == false) {
@@ -31,6 +36,10 @@ Route::post('/login',function (Request $request){
         return response()->json(["message" => "User does not exists"],404);
     }
 });
-Route::get('/lipa-na-mpesa/phone={phone}','MpesaController@lipa_na_mpesa');
 Route::post('/register','RegisterController@register');
 Route::get('/properties-sale','PropertyController@forSale');
+Route::get('users',function (){
+   return response()->json([\App\User::all()->toJson()],200) ;
+});
+//mpesa routes
+Route::get('/lipa-na-mpesa/phone={phone}+amount={amount}','MpesaController@lipa_na_mpesa');//stk push
