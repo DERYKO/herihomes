@@ -29,5 +29,34 @@ ImageView property;
 
         final ImageView iV_peter =(ImageView)findViewById(R.id.iV_peter);
         iV_peter.setImageResource(R.drawable.peter);
+
+        final ImageView iv_chart =(ImageView)findViewById(R.id.iv_chart);
+        iv_chart.setImageResource(R.drawable.chart);
+
+        final ImageView iv_inbox =(ImageView)findViewById(R.id.iv_inbox);
+        iv_inbox.setImageResource(R.drawable.inbox);
+
+        final ImageView iv_setting =(ImageView)findViewById(R.id.iv_setting);
+        iv_setting.setImageResource(R.drawable.settings);
+
+        final ImageView iv_logout =(ImageView)findViewById(R.id.iv_logout);
+        iv_logout.setImageResource(R.drawable.logout);
+
+        final ImageView iv_pay = (ImageView)findViewById(R.id.iv_pay);
+        iv_pay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, payrentActivity.class);
+                MainActivity.this.startActivity(intent);
+            }
+        });
+        final ImageView iv_pay_schedule = (ImageView)findViewById(R.id.iv_pay_schedule);
+        iv_pay_schedule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PaymentScheduleActivity.class);
+                MainActivity.this.startActivity(intent);
+            }
+        });
     }
 }

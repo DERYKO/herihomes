@@ -16,4 +16,8 @@ public interface MyApiEndpoint {
 
     @GET("properties-sale")
     Call<ResponseBody> properties();
+
+    @GET("lipa-na-mpesa")
+    Call<ResponseBody> rent();
+
 }

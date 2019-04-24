@@ -42,4 +42,4 @@ Route::get('users',function (){
    return response()->json([\App\User::all()->toJson()],200) ;
 });
 //mpesa routes
-Route::get('/lipa-na-mpesa/phone={phone}+amount={amount}','MpesaController@lipa_na_mpesa');//stk push
+Route::get('/lipa-na-mpesa','MpesaController@lipa_na_mpesa');//stk push

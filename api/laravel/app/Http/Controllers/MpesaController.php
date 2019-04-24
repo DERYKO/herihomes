@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MpesaController extends Controller
 {
@@ -51,14 +52,14 @@ class MpesaController extends Controller
 
     }
 
-    public function lipa_na_mpesa($phone,$amount){
+    public function lipa_na_mpesa(){
         $BusinessShortCode=174379;
         $Passkey='bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919';
         $TransactionType='CustomerPayBillOnline';
-        $Amount=$amount;
-        $PartyA=$phone;
+        $Amount=400;
+        $PartyA='0703282151';
         $PartyB=174379;
-        $PhoneNumber=$phone;
+        $PhoneNumber='0703282151';
         $CallBackURL='http://daraja-api.herokuapp.com/c2b/validation';
         $AccountReference='Heri Home Testing';
         $TransactionDesc='Testing';
