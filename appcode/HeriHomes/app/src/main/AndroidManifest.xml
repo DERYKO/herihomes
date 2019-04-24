@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".PaymentScheduleActivity"></activity>
-        <activity android:name=".PayRentActivity" />
+        <activity android:name=".payrentActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".LandingActivity">

@@ -37,7 +37,7 @@ public class MainActivity extends Activity {
         iv_pay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, PayRentActivity.class);
+                Intent intent = new Intent(MainActivity.this, payrentActivity.class);
                 MainActivity.this.startActivity(intent);
             }
         });

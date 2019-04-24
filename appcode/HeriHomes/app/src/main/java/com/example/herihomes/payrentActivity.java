@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.Window;
 import android.widget.ImageView;
 
-public class PayRentActivity extends Activity {
+public class payrentActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
